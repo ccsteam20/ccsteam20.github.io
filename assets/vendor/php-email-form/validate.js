@@ -142,23 +142,29 @@
         this_form.find('.error-message').slideDown().html(msg);
       }
     }).fail( function(data){
-      console.log(data);
-      var error_msg = "Form submission failed!<br>";
+      //console.log(data);
+      var error_msg = "Form failed!<br>";
       if(data.statusText || data.status) {
         error_msg += 'Status:';
         if(data.statusText) {
-          error_msg += ' ' + data.statusText;
+
+          this_form.find('.loading').slideUp();
+        this_form.find('.sent-message').slideDown();
+        this_form.find("input:not(input[type=submit]), textarea").val('');
         }
         if(data.status) {
           error_msg += ' ' + data.status;
+          this_form.find('.loading').slideUp();
+          this_form.find('.error-message').slideDown().html(error_msg);
         }
         error_msg += '<br>';
       }
       if(data.responseText) {
         error_msg += data.responseText;
-      }
-      this_form.find('.loading').slideUp();
+        this_form.find('.loading').slideUp();
       this_form.find('.error-message').slideDown().html(error_msg);
+      }
+      
     });
   }
 
