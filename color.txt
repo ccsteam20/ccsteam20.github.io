@@ -1,0 +1,22 @@
+#019fed;  rgb(1, 159, 237) bleu
+
+#ffff00;  rgb(255 255 0)jeaune
+
+font-family: 'Ubuntu', sans-serif;
+
+ #5cb85c; vert
+
+<div class="section-title">
+          <h2>About</h2>
+          <p>About Us</p>
+        </div>
+
+
+
+
+
+
+
+
+
+
